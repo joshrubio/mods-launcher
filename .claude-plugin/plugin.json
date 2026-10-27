@@ -1,6 +1,6 @@
 {
   "name": "mods-launcher",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A single Mods button in the prompt footer that opens an upward menu to reach every installed mod's commands",
   "types": "./types/index.d.ts",
   "author": { "name": "joshrubio" },
