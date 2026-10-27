@@ -1,0 +1,12 @@
+{
+  "name": "mods-launcher",
+  "owner": { "name": "joshrubio" },
+  "metadata": { "description": "A Mods button for Claude Code that opens a menu of every installed mod's commands" },
+  "plugins": [
+    {
+      "name": "mods-launcher",
+      "description": "A Mods button in the prompt footer; its menu opens upward and lists the slash commands of every installed mod",
+      "source": "./"
+    }
+  ]
+}
