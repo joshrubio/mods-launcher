@@ -47,16 +47,14 @@ export const register: Register = on => {
     return { text: 'Mods panel opened.' }
   })
 
-  // The footer's mode labels (`focus`, `memory paused`) live in `SessionMode`;
-  // the engine's labels are redrawn here so the button sits beside them.
-  on('ui.render', { component: 'SessionMode' }, async ($, e) => {
+  // The button sits in the footer's `SessionMode` row, beside what the engine and other mods draw there.
+  on('ui.render', { component: 'SessionMode' }, async ($, e, next) => {
+    const inner = await next(e)
     const { Box, Button, Text } = $.ui.resolve(e)
-    const modes = e.props.modes
-    const isMenuOpen = await read($, isOpen)
 
     return (
       <Box paddingX="md" gap="sm">
-        {modes.length > 0 && <Text dimColor>{modes.join(' & ')}</Text>}
+        {inner}
         <Button key="mods" label="Mods" plain onPress={() => update($, isOpen, wasOpen => !wasOpen)}>
           <Text color="#FFFFFF">Mods</Text>
         </Button>
